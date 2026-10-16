@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>О нас — FlaskSite</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+    <a href="{{ url_for('main') }}" class="logo">
+        Flask<span>Site</span>
+    </a>
+
+    <nav>
+        <a href="{{ url_for('main') }}">Главная</a>
+        <a href="{{ url_for('about') }}">О нас</a>
+        <a href="{{ url_for('chart') }}">График</a>
+    </nav>
+</header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="subtitle">О проекте</p>
+
+                <h1>
+                    Немного
+                    <span>о нас</span>
+                </h1>
+
+                <p class="description">
+                    FlaskSite — небольшой учебный веб-проект,
+                    созданный с использованием Python, Flask,
+                    HTML и CSS.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="icon">🐍</div>
+
+                <h2>Python</h2>
+
+                <p>
+                    Python используется для серверной части
+                    приложения и обработки запросов пользователей.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">⚙️</div>
+
+                <h2>Flask</h2>
+
+                <p>
+                    Flask связывает страницы сайта,
+                    маршруты и серверную логику приложения.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎨</div>
+
+                <h2>HTML & CSS</h2>
+
+                <p>
+                    HTML отвечает за структуру страниц,
+                    а CSS — за их внешний вид и оформление.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="subtitle">Наша цель</p>
+
+                <h1>
+                    Учиться,
+                    <span>создавая</span>
+                </h1>
+
+                <p class="description">
+                    Этот проект создан для изучения основ
+                    веб-разработки на Python и понимания того,
+                    как браузер взаимодействует с сервером.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="/" class="button primary">
+                        Вернуться на главную
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Создано с помощью Python + Flask</p>
+    </footer>
+
+</body>
+
+</html>

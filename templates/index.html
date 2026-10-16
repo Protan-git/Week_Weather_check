@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Flask сайт</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<header class="header">
+    <a href="{{ url_for('main') }}" class="logo">
+        Flask<span>Site</span>
+    </a>
+
+    <nav>
+        <a href="{{ url_for('main') }}">Главная</a>
+        <a href="{{ url_for('about') }}">О нас</a>
+        <a href="{{ url_for('chart') }}">График</a>
+    </nav>
+</header>
+
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="subtitle">Добро пожаловать</p>
+
+                <h1>
+                    Мой первый
+                    <span>Flask-сайт</span>
+                </h1>
+
+                <p class="description">
+                    Небольшой веб-сайт, созданный на Python
+                    с использованием Flask.
+                </p>
+
+                <div class="buttons">
+                    <a href="/about" class="button primary">
+                        Узнать больше
+                    </a>
+
+                    <a href="/data" class="button secondary">
+                        Открыть API
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="icon">🐍</div>
+
+                <h2>Python</h2>
+
+                <p>
+                    Серверная часть сайта написана
+                    на языке Python.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">⚡</div>
+
+                <h2>Flask</h2>
+
+                <p>
+                    Flask обрабатывает запросы
+                    и отправляет ответы браузеру.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🌐</div>
+
+                <h2>Web</h2>
+
+                <p>
+                    HTML и CSS отвечают за внешний
+                    вид этой страницы.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Создано с помощью Python + Flask</p>
+    </footer>
+
+</body>
+</html>
