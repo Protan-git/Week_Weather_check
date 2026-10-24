@@ -1,25 +1,24 @@
-import sqlite3
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+DATABASE_URL = 'sqlite:///weather.db'
+
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={'check_same_thread': False}
+)
+
+Base = declarative_base()
+
+SessionLocal = sessionmaker(
+    bind=engine,
+    autoflush=False,
+    autocommit=False
+)
 
 
-DATABASE = 'users.db'
+def init_db():
+    import models
 
-
-def create_database():
-    connection = sqlite3.connect(DATABASE)
-
-    cursor = connection.cursor()
-
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username TEXT NOT NULL UNIQUE,
-            email TEXT NOT NULL UNIQUE,
-            password_hash TEXT NOT NULL
-        )
-    ''')
-
-    connection.commit()
-    connection.close()
-
-
-create_database()
+    Base.metadata.create_all(bind=engine)
+    print('Таблицы базы данных созданы или уже существуют.')
