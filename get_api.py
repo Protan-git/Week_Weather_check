@@ -1,9 +1,11 @@
 import requests
 from dotenv import dotenv_values
 
+config = dotenv_values('.env.my')
 
-config = dotenv_values('.env.my') #for use
-# config = 'put_here_api_from_openweathermap' #for tests
+if not config.get('API_KEY'):
+    config = dotenv_values('.env.example')
+
 API_KEY = config.get('API_KEY')
 
 
